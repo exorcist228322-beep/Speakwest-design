@@ -3868,3 +3868,316 @@ html[data-theme='dark'] .ev-alert {
     flex-wrap: wrap;
   }
 }
+
+/* 4.8 classes */
+.ev-class-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 22px 18px;
+}
+
+.ev-class-create {
+  flex-direction: column;
+  aspect-ratio: 1 / 1.18;
+}
+
+.ev-class {
+  min-width: 0;
+}
+
+.ev-class-cover {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.ev-class-cover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(28, 36, 52, 0.1);
+}
+
+.ev-class-cover.tone-0 { background: color-mix(in srgb, #2f6bff 14%, var(--surface)); color: #2f6bff; }
+.ev-class-cover.tone-1 { background: color-mix(in srgb, #20b6d6 16%, var(--surface)); color: #1a9cb8; }
+.ev-class-cover.tone-2 { background: color-mix(in srgb, #8b7cf6 16%, var(--surface)); color: #7a6af0; }
+.ev-class-cover.tone-3 { background: color-mix(in srgb, #ff7a6b 16%, var(--surface)); color: #f0604f; }
+.ev-class-cover.tone-4 { background: color-mix(in srgb, #4cc38a 18%, var(--surface)); color: #2fa86d; }
+.ev-class-cover.tone-5 { background: color-mix(in srgb, #ffb020 20%, var(--surface)); color: #d48c00; }
+
+.ev-class-letter {
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.ev-class-kind {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ev-class-members {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  display: flex;
+}
+
+.ev-class-members span {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  margin-right: -8px;
+  border-radius: 50%;
+  border: 2px solid color-mix(in srgb, currentColor 20%, var(--surface));
+  background: var(--surface);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ev-class-name {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ev-class-course {
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.ev-class-course a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* 4.8 schedule */
+.ev-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.ev-week-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.ev-week-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ev-week-nav .ev-icon-btn {
+  width: 36px;
+  height: 36px;
+}
+
+.ev-week-label {
+  min-width: 170px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.ev-week-bar .ev-btn-soft {
+  height: 36px;
+  padding: 0 14px;
+  font-size: 14px;
+}
+
+.ev-week-bar .ev-btn-soft:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.ev-week-count {
+  margin-left: auto;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.ev-cal {
+  max-height: 600px;
+  overflow: auto;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.ev-cal-inner {
+  min-width: 760px;
+}
+
+.ev-cal-head,
+.ev-cal-body {
+  display: grid;
+  grid-template-columns: 56px repeat(7, 1fr);
+}
+
+.ev-cal-head {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.ev-cal-head > span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0 8px;
+  color: var(--text-muted);
+}
+
+.ev-cal-dayname {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.ev-cal-date {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin-top: 2px;
+  border-radius: 50%;
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.ev-cal-head .today .ev-cal-dayname {
+  color: var(--primary);
+}
+
+.ev-cal-head .today .ev-cal-date {
+  background: var(--primary);
+  color: #fff;
+}
+
+.ev-cal-body {
+  position: relative;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--border) 0,
+    var(--border) 1px,
+    transparent 1px,
+    transparent 56px
+  );
+}
+
+.ev-cal-hours span {
+  display: block;
+  padding: 4px 8px 0 0;
+  text-align: right;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.ev-cal-day {
+  position: relative;
+  border-left: 1px solid var(--border);
+}
+
+.ev-cal-day.today {
+  background: color-mix(in srgb, var(--primary) 5%, transparent);
+}
+
+.ev-cal-lesson {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  padding: 6px 8px;
+  overflow: hidden;
+  border: none;
+  border-left: 3px solid currentColor;
+  border-radius: 8px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ev-cal-lesson.tone-0 { background: color-mix(in srgb, #2f6bff 14%, var(--surface)); color: #2f6bff; }
+.ev-cal-lesson.tone-1 { background: color-mix(in srgb, #20b6d6 16%, var(--surface)); color: #1a9cb8; }
+.ev-cal-lesson.tone-2 { background: color-mix(in srgb, #8b7cf6 16%, var(--surface)); color: #7a6af0; }
+.ev-cal-lesson.tone-3 { background: color-mix(in srgb, #ff7a6b 16%, var(--surface)); color: #f0604f; }
+.ev-cal-lesson.tone-4 { background: color-mix(in srgb, #4cc38a 18%, var(--surface)); color: #2fa86d; }
+.ev-cal-lesson.tone-5 { background: color-mix(in srgb, #ffb020 20%, var(--surface)); color: #d48c00; }
+
+.ev-cal-lesson-name {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.ev-cal-lesson-time {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.ev-cal-now {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  height: 2px;
+  background: #ef4444;
+}
+
+.ev-cal-now::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: -4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ef4444;
+}
+
+@media (max-width: 640px) {
+  .ev-title-row {
+    flex-wrap: wrap;
+  }
+
+  .ev-week-count {
+    margin-left: 0;
+  }
+
+  .ev-class-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ev-class-letter {
+    font-size: 44px;
+  }
+}

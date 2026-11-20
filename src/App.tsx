@@ -1,11 +1,13 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { Layout } from './components/Layout'
 import { UiPrefsProvider } from './context/UiPrefs'
+import { Classes } from './pages/Classes'
 import { CourseDetail } from './pages/CourseDetail'
 import { Courses } from './pages/Courses'
 import { Home } from './pages/Home'
 import { Lesson } from './pages/Lesson'
 import { Review } from './pages/Review'
+import { Schedule } from './pages/Schedule'
 import { Settings } from './pages/Settings'
 import { Students } from './pages/Students'
 
@@ -22,6 +24,8 @@ export default function App() {
             <Route path="students" element={<Students />} />
             <Route path="review" element={<Review />} />
             <Route path="settings" element={<Settings />} />
+            <Route path="classes" element={<Classes />} />
+            <Route path="schedule" element={<Schedule />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>

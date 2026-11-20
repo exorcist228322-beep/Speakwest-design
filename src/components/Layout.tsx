@@ -4,7 +4,9 @@ import { TEACHER_NAME } from '../data/mock'
 import { useUiPrefs } from '../context/UiPrefs'
 import {
   IconBook,
+  IconCalendar,
   IconChevronDown,
+  IconClasses,
   IconClipboard,
   IconGradCap,
   IconHome,
@@ -29,11 +31,13 @@ const navV32 = [
   { to: '/review', label: 'Проверка', icon: IconClipboard },
 ]
 
-// 4.8: EdVibe order — students before materials, settings last
+// 4.8: EdVibe order — classes, students, materials, schedule, settings last
 const navV48 = [
   { to: '/', label: 'Главная', icon: IconHome, end: true },
+  { to: '/classes', label: 'Классы', icon: IconClasses },
   { to: '/students', label: 'Ученики', icon: IconGradCap },
   { to: '/courses', label: 'Курсы', icon: IconBook },
+  { to: '/schedule', label: 'Расписание', icon: IconCalendar },
   { to: '/review', label: 'Проверка', icon: IconClipboard },
   { to: '/settings', label: 'Настройки', icon: IconSettings },
 ]

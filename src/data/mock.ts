@@ -110,6 +110,42 @@ export const courses: Course[] = [
   },
 ]
 
+export type ClassRoom = {
+  id: string
+  name: string
+  kind: 'single' | 'group'
+  studentIds: string[]
+  courseId?: string
+  tone: number
+}
+
+// EdVibe-style classes: one student or a small group
+export const classes: ClassRoom[] = [
+  { id: 'c1', name: 'Ксения', kind: 'single', studentIds: ['5'], courseId: 'd597fffe-e178-47ee-9e0b-ece9739f4da7', tone: 3 },
+  { id: 'c2', name: 'Александрина', kind: 'single', studentIds: ['1'], courseId: 'language-hub', tone: 0 },
+  { id: 'c3', name: 'Артем', kind: 'single', studentIds: ['3'], tone: 4 },
+  { id: 'c4', name: 'Мини-группа 9–11', kind: 'group', studentIds: ['2', '4', '6'], tone: 2 },
+]
+
+export type ScheduledLesson = {
+  id: string
+  classId: string
+  /** 0 = Monday … 6 = Sunday, repeats every week */
+  day: number
+  start: string
+  minutes: number
+}
+
+export const schedule: ScheduledLesson[] = [
+  { id: 's1', classId: 'c1', day: 0, start: '16:00', minutes: 60 },
+  { id: 's2', classId: 'c1', day: 2, start: '16:00', minutes: 60 },
+  { id: 's3', classId: 'c2', day: 1, start: '17:30', minutes: 60 },
+  { id: 's4', classId: 'c2', day: 3, start: '17:30', minutes: 60 },
+  { id: 's5', classId: 'c3', day: 4, start: '15:00', minutes: 45 },
+  { id: 's6', classId: 'c4', day: 5, start: '11:00', minutes: 90 },
+  { id: 's7', classId: 'c4', day: 2, start: '18:30', minutes: 90 },
+]
+
 export function todayLabel(date = new Date()) {
   return date.toLocaleDateString('ru-RU', {
     weekday: 'long',

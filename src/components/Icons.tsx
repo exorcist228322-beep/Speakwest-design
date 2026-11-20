@@ -230,3 +230,41 @@ export function IconInfo({ size = 18 }: IconProps) {
     </svg>
   )
 }
+
+export function IconClasses({ size = 20 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="9" cy="8.5" r="3" />
+      <path d="M3.5 19c1-2.8 3-4 5.5-4s4.5 1.2 5.5 4" />
+      <circle cx="16.5" cy="9.5" r="2.4" />
+      <path d="M16 14.6c2.2 0 3.7 1 4.5 3.4" />
+    </svg>
+  )
+}
+
+export function IconCalendar({ size = 20 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3.5" y="5" width="17" height="15" rx="2.5" />
+      <path d="M3.5 10h17" />
+      <path d="M8 3v4" />
+      <path d="M16 3v4" />
+    </svg>
+  )
+}
+
+export function IconChevronLeft({ size = 18 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="m15 6-6 6 6 6" />
+    </svg>
+  )
+}
+
+export function IconChevronRight({ size = 18 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="m9 6 6 6-6 6" />
+    </svg>
+  )
+}
