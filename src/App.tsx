@@ -1,0 +1,29 @@
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { Layout } from './components/Layout'
+import { UiPrefsProvider } from './context/UiPrefs'
+import { CourseDetail } from './pages/CourseDetail'
+import { Courses } from './pages/Courses'
+import { Home } from './pages/Home'
+import { Lesson } from './pages/Lesson'
+import { Review } from './pages/Review'
+import { Students } from './pages/Students'
+
+export default function App() {
+  return (
+    <UiPrefsProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="courses" element={<Courses />} />
+            <Route path="courses/:courseId" element={<CourseDetail />} />
+            <Route path="courses/:courseId/lessons/:lessonId" element={<Lesson />} />
+            <Route path="students" element={<Students />} />
+            <Route path="review" element={<Review />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </UiPrefsProvider>
+  )
+}
