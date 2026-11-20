@@ -191,3 +191,42 @@ export function IconPencil({ size = 16 }: IconProps) {
     </svg>
   )
 }
+
+export function IconSearch({ size = 18 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="11" cy="11" r="6.5" />
+      <path d="m20 20-4.2-4.2" />
+    </svg>
+  )
+}
+
+export function IconGrid({ size = 16 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round">
+      <rect x="4" y="4" width="6.5" height="6.5" rx="1.6" />
+      <rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6" />
+      <rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6" />
+      <rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6" />
+    </svg>
+  )
+}
+
+export function IconRows({ size = 16 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round">
+      <rect x="4" y="5" width="16" height="5.5" rx="1.6" />
+      <rect x="4" y="13.5" width="16" height="5.5" rx="1.6" />
+    </svg>
+  )
+}
+
+export function IconInfo({ size = 18 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 11v5.5" />
+      <path d="M12 7.6v.1" />
+    </svg>
+  )
+}

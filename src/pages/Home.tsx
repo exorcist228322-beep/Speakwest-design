@@ -226,7 +226,7 @@ export function Home() {
         </span>
       </button>
 
-      <button type="button" className="panel-v43 panel-v43-link accent-slate">
+      <Link to="/settings" className="panel-v43 panel-v43-link accent-slate">
         <span className="panel-v43-icon" aria-hidden>
           <IconSettings />
         </span>
@@ -237,7 +237,7 @@ export function Home() {
         <span className="panel-v43-go" aria-hidden>
           →
         </span>
-      </button>
+      </Link>
     </div>
   )
 

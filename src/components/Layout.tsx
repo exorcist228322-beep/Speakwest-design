@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { NavLink, Outlet, useLocation } from 'react-router-dom'
+import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { TEACHER_NAME } from '../data/mock'
 import { useUiPrefs } from '../context/UiPrefs'
 import {
@@ -10,6 +10,7 @@ import {
   IconHome,
   IconLogout,
   IconMoon,
+  IconSettings,
   IconSun,
   IconUsers,
 } from './Icons'
@@ -28,8 +29,18 @@ const navV32 = [
   { to: '/review', label: 'Проверка', icon: IconClipboard },
 ]
 
+// 4.8: EdVibe order — students before materials, settings last
+const navV48 = [
+  { to: '/', label: 'Главная', icon: IconHome, end: true },
+  { to: '/students', label: 'Ученики', icon: IconGradCap },
+  { to: '/courses', label: 'Курсы', icon: IconBook },
+  { to: '/review', label: 'Проверка', icon: IconClipboard },
+  { to: '/settings', label: 'Настройки', icon: IconSettings },
+]
+
 export function Layout() {
   const location = useLocation()
+  const navigate = useNavigate()
   const { theme, version, setTheme, setVersion } = useUiPrefs()
   const isV32Family =
     version === 'v32' ||
@@ -45,7 +56,8 @@ export function Layout() {
   const isRail = version === 'v3' || version === 'v31' || isV32Family
   const isV31 = version === 'v31'
   const showEagle = isV31 || isV32Family
-  const nav = isV32Family ? navV32 : navDefault
+  const isV48 = version === 'v48'
+  const nav = isV48 ? navV48 : isV32Family ? navV32 : navDefault
   const [menuOpen, setMenuOpen] = useState(false)
   const [userOpen, setUserOpen] = useState(false)
   const userRef = useRef<HTMLDivElement>(null)
@@ -77,7 +89,39 @@ export function Layout() {
     .filter(Boolean)
     .join(' ')
 
-  const dropdown = userOpen && (
+  const logoutItem = (
+    <button
+      type="button"
+      className="user-dropdown-item danger"
+      role="menuitem"
+      onClick={() => {
+        setUserOpen(false)
+        window.alert('Выход (макет)')
+      }}
+    >
+      <IconLogout size={16} /> Выйти
+    </button>
+  )
+
+  // 4.8: the theme lives in Settings, the name menu only has profile and logout
+  const dropdownV48 = (
+    <div className="user-dropdown user-dropdown-rail" role="menu">
+      <button
+        type="button"
+        className="user-dropdown-item"
+        role="menuitem"
+        onClick={() => {
+          setUserOpen(false)
+          navigate('/settings')
+        }}
+      >
+        <IconUsers size={16} /> Профиль
+      </button>
+      {logoutItem}
+    </div>
+  )
+
+  const dropdown = userOpen && (isV48 ? dropdownV48 : (
     <div className={`user-dropdown${isV32Family ? ' user-dropdown-rail' : ''}`} role="menu">
       <div className="user-dropdown-label">Тема</div>
       <div className="theme-switch">
@@ -97,19 +141,9 @@ export function Layout() {
         </button>
       </div>
       <div className="user-dropdown-divider" />
-      <button
-        type="button"
-        className="user-dropdown-item danger"
-        role="menuitem"
-        onClick={() => {
-          setUserOpen(false)
-          window.alert('Выход (макет)')
-        }}
-      >
-        <IconLogout size={16} /> Выйти
-      </button>
+      {logoutItem}
     </div>
-  )
+  ))
 
   return (
     <div className={`app-shell version-${version}`}>

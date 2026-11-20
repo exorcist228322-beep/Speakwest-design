@@ -6,6 +6,7 @@ import { Courses } from './pages/Courses'
 import { Home } from './pages/Home'
 import { Lesson } from './pages/Lesson'
 import { Review } from './pages/Review'
+import { Settings } from './pages/Settings'
 import { Students } from './pages/Students'
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
             <Route path="courses/:courseId/lessons/:lessonId" element={<Lesson />} />
             <Route path="students" element={<Students />} />
             <Route path="review" element={<Review />} />
+            <Route path="settings" element={<Settings />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>

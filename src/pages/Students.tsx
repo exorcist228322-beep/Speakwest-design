@@ -1,8 +1,15 @@
 import { useState } from 'react'
 import { initial, students } from '../data/mock'
 import { IconDoor, IconLink, IconPlus } from '../components/Icons'
+import { useUiPrefs } from '../context/UiPrefs'
+import { StudentsEdvibe } from './StudentsEdvibe'
 
 export function Students() {
+  const { version } = useUiPrefs()
+  return version === 'v48' ? <StudentsEdvibe /> : <StudentsCards />
+}
+
+function StudentsCards() {
   const [toast, setToast] = useState<string | null>(null)
 
   function flash(message: string) {
