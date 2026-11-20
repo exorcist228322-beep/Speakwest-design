@@ -40,7 +40,8 @@ export function Layout() {
     version === 'v43' ||
     version === 'v44' ||
     version === 'v46' ||
-    version === 'v47'
+    version === 'v47' ||
+    version === 'v48'
   const isRail = version === 'v3' || version === 'v31' || isV32Family
   const isV31 = version === 'v31'
   const showEagle = isV31 || isV32Family
@@ -260,6 +261,9 @@ export function Layout() {
         </button>
         <button type="button" className={version === 'v47' ? 'active' : ''} onClick={() => setVersion('v47')}>
           4.7
+        </button>
+        <button type="button" className={version === 'v48' ? 'active' : ''} onClick={() => setVersion('v48')}>
+          4.8
         </button>
       </div>
     </div>

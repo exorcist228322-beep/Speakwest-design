@@ -28,6 +28,7 @@ export function Home() {
   const isV44 = version === 'v44'
   const isV46 = version === 'v46'
   const isV47 = version === 'v47'
+  const isV48 = version === 'v48'
   const isV4Home = isV41 || isV42
   const hidePageTop = isV44
   const [modalOpen, setModalOpen] = useState(false)
@@ -240,6 +241,23 @@ export function Home() {
     </div>
   )
 
+  const campusFeed = (
+    <section className="campus-feed">
+      <div className="campus-feed-art" aria-hidden>
+        <span className="campus-blob b1" />
+        <span className="campus-blob b2" />
+        <span className="campus-blob b3" />
+        <span className="campus-feed-icon">
+          <IconPulse />
+        </span>
+      </div>
+      <div className="campus-feed-copy">
+        <h2>Пока всё спокойно</h2>
+        <p>Когда ученики сдадут домашки, свежие события появятся здесь</p>
+      </div>
+    </section>
+  )
+
   const activityLane = (
     <section className="activity-v43">
       <div className="activity-v43-head">
@@ -309,22 +327,14 @@ export function Home() {
         </div>
       )}
 
-      {isV47 ? (
+      {isV48 ? (
+        <div className="home-v48">
+          {campusFeed}
+          {statsV43}
+        </div>
+      ) : isV47 ? (
         <div className="home-v47">
-          <section className="campus-feed">
-            <div className="campus-feed-art" aria-hidden>
-              <span className="campus-blob b1" />
-              <span className="campus-blob b2" />
-              <span className="campus-blob b3" />
-              <span className="campus-feed-icon">
-                <IconPulse />
-              </span>
-            </div>
-            <div className="campus-feed-copy">
-              <h2>Пока всё спокойно</h2>
-              <p>Когда ученики сдадут домашки, свежие события появятся здесь</p>
-            </div>
-          </section>
+          {campusFeed}
 
           <div className="campus-grid metrics-v47">
             <Link to="/students" className="metric-tile tone-blue">
@@ -383,20 +393,7 @@ export function Home() {
         </div>
       ) : isV46 ? (
         <div className="home-v46">
-          <section className="campus-feed">
-            <div className="campus-feed-art" aria-hidden>
-              <span className="campus-blob b1" />
-              <span className="campus-blob b2" />
-              <span className="campus-blob b3" />
-              <span className="campus-feed-icon">
-                <IconPulse />
-              </span>
-            </div>
-            <div className="campus-feed-copy">
-              <h2>Пока всё спокойно</h2>
-              <p>Когда ученики сдадут домашки, свежие события появятся здесь</p>
-            </div>
-          </section>
+          {campusFeed}
 
           <div className="campus-grid">
             <Link to="/students" className="campus-card tone-sky">

@@ -405,13 +405,13 @@ a {
 /* --- v3 / v3.1 / v3.2: Edvibe-style icon rail that slides out --- */
 .version-v3 .body-row,
 .version-v31 .body-row,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .body-row {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .body-row {
   background: var(--bg);
 }
 
 .version-v3 .sidebar.rail,
 .version-v31 .sidebar.rail,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .sidebar.rail {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .sidebar.rail {
   display: flex;
   width: var(--rail-w);
   flex-shrink: 0;
@@ -428,7 +428,7 @@ a {
   transition: width 0.28s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.28s ease;
 }
 
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .sidebar.rail {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .sidebar.rail {
   top: 0;
   height: 100vh;
   position: sticky;
@@ -436,7 +436,7 @@ a {
 
 html[data-theme='dark'] .version-v3 .sidebar.rail,
 html[data-theme='dark'] .version-v31 .sidebar.rail,
-html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .sidebar.rail {
+html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .sidebar.rail {
   background: #1a1f2b;
   border-right-color: var(--border);
 }
@@ -445,15 +445,15 @@ html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v
 .version-v3 .sidebar.rail:focus-within,
 .version-v31 .sidebar.rail:hover,
 .version-v31 .sidebar.rail:focus-within,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .sidebar.rail:hover,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .sidebar.rail:focus-within {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .sidebar.rail:hover,
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .sidebar.rail:focus-within {
   width: var(--rail-w-open);
   box-shadow: 8px 0 28px rgba(26, 29, 38, 0.1);
 }
 
 .version-v3 .sidebar.rail .nav-item,
 .version-v31 .sidebar.rail .nav-item,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .sidebar.rail .nav-item {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .sidebar.rail .nav-item {
   position: relative;
   margin: 0 8px;
   padding: 12px 14px;
@@ -471,14 +471,14 @@ html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v
 
 .version-v3 .sidebar.rail .nav-item:hover,
 .version-v31 .sidebar.rail .nav-item:hover,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .sidebar.rail .nav-item:hover {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .sidebar.rail .nav-item:hover {
   background: var(--rail-hover-bg);
   color: var(--rail-item-hover);
 }
 
 html[data-theme='dark'] .version-v3 .sidebar.rail .nav-item:hover,
 html[data-theme='dark'] .version-v31 .sidebar.rail .nav-item:hover,
-html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .sidebar.rail .nav-item:hover {
+html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .sidebar.rail .nav-item:hover {
   background: rgba(255, 255, 255, 0.06);
   color: var(--text-muted);
 }
@@ -500,13 +500,13 @@ html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v
 }
 
 .version-v31 .sidebar.rail .nav-item.active,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .sidebar.rail .nav-item.active {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .sidebar.rail .nav-item.active {
   background: var(--rail-active-bg);
   color: var(--rail-item-hover);
 }
 
 .version-v31 .sidebar.rail .nav-item.active::before,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .sidebar.rail .nav-item.active::before {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .sidebar.rail .nav-item.active::before {
   content: '';
   position: absolute;
   left: -8px;
@@ -523,12 +523,12 @@ html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v
 }
 
 .version-v31 .sidebar.rail,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .sidebar.rail {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .sidebar.rail {
   justify-content: flex-start;
 }
 
 .version-v31 .logo-rail,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .logo-rail {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .logo-rail {
   margin-top: auto;
   margin-bottom: 8px;
   margin-left: 8px;
@@ -544,7 +544,7 @@ html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v
 }
 
 .version-v31 .logo-eagle-wrap,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .logo-eagle-wrap {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .logo-eagle-wrap {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -557,7 +557,7 @@ html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v
 }
 
 .version-v31 .logo-eagle,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .logo-eagle {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .logo-eagle {
   width: 28px;
   height: 28px;
   object-fit: contain;
@@ -565,7 +565,7 @@ html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v
 }
 
 .version-v31 .logo-wordmark,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .logo-wordmark {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .logo-wordmark {
   height: 20px;
   width: auto;
   opacity: 0;
@@ -578,42 +578,42 @@ html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v
 .version-v31 .sidebar.rail:hover .logo-eagle-wrap,
 .version-v31 .sidebar.rail:focus-within .logo-eagle-wrap,
 .version-v31 .logo-rail:hover .logo-eagle-wrap,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .sidebar.rail:hover .logo-eagle-wrap,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .sidebar.rail:focus-within .logo-eagle-wrap,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .logo-rail:hover .logo-eagle-wrap {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .sidebar.rail:hover .logo-eagle-wrap,
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .sidebar.rail:focus-within .logo-eagle-wrap,
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .logo-rail:hover .logo-eagle-wrap {
   background: var(--rail-chip-hover);
 }
 
 .version-v31 .sidebar.rail:hover .logo-wordmark,
 .version-v31 .sidebar.rail:focus-within .logo-wordmark,
 .version-v31 .logo-rail:hover .logo-wordmark,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .sidebar.rail:hover .logo-wordmark,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .sidebar.rail:focus-within .logo-wordmark,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .logo-rail:hover .logo-wordmark {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .sidebar.rail:hover .logo-wordmark,
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .sidebar.rail:focus-within .logo-wordmark,
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .logo-rail:hover .logo-wordmark {
   opacity: 1;
   transform: translateX(0);
 }
 
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .sidebar.rail.expanded {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .sidebar.rail.expanded {
   width: var(--rail-w-open);
   overflow: hidden;
   box-shadow: 8px 0 28px rgba(26, 29, 38, 0.1);
 }
 
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .sidebar.rail.expanded .nav-label,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .sidebar.rail.expanded .logo-wordmark {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .sidebar.rail.expanded .nav-label,
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .sidebar.rail.expanded .logo-wordmark {
   opacity: 1;
   transform: translateX(0);
 }
 
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .sidebar-nav {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .sidebar-nav {
   display: flex;
   flex-direction: column;
   gap: 2px;
   min-width: 0;
 }
 
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .user-menu-rail {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .user-menu-rail {
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -622,18 +622,18 @@ html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v
   width: 100%;
 }
 
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .user-menu-rail .user-rail-btn {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .user-menu-rail .user-rail-btn {
   /* same box as other nav-items — no extra offset */
   margin: 0 8px;
   width: calc(100% - 16px);
 }
 
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .user-rail-btn.open {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .user-rail-btn.open {
   background: var(--rail-active-bg);
   color: var(--rail-item-hover);
 }
 
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .user-dropdown-rail {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .user-dropdown-rail {
   position: static;
   width: calc(100% - 16px);
   max-width: calc(100% - 16px);
@@ -648,39 +648,39 @@ html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v
   overflow: hidden;
 }
 
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .user-dropdown-rail .theme-switch {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .user-dropdown-rail .theme-switch {
   width: 100%;
   min-width: 0;
 }
 
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .user-dropdown-rail .theme-switch button {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .user-dropdown-rail .theme-switch button {
   min-width: 0;
   padding: 8px 2px;
   font-size: 11px;
   gap: 3px;
 }
 
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .user-dropdown-rail .user-dropdown-label {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .user-dropdown-rail .user-dropdown-label {
   color: #6b7388;
 }
 
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .user-dropdown-rail .theme-switch button {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .user-dropdown-rail .theme-switch button {
   background: var(--rail-bg);
   border-color: var(--rail-panel-border);
   color: #6b7388;
 }
 
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .user-dropdown-rail .theme-switch button.active {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .user-dropdown-rail .theme-switch button.active {
   background: var(--rail-chip-hover);
   border-color: var(--rail-active-bar);
   color: #4a5266;
 }
 
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .user-dropdown-rail .user-dropdown-divider {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .user-dropdown-rail .user-dropdown-divider {
   background: var(--rail-panel-divider);
 }
 
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .user-dropdown-rail .user-dropdown-item:hover {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .user-dropdown-rail .user-dropdown-item:hover {
   background: var(--rail-chip-hover);
 }
 
@@ -695,18 +695,18 @@ html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v
   }
 }
 
-html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .user-dropdown-rail {
+html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .user-dropdown-rail {
   background: var(--rail-panel);
   border-color: var(--rail-panel-border);
 }
 
-html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .user-dropdown-rail .theme-switch button {
+html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .user-dropdown-rail .theme-switch button {
   background: var(--bg);
   border-color: var(--rail-panel-border);
   color: var(--text-muted);
 }
 
-html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .user-dropdown-rail .theme-switch button.active {
+html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .user-dropdown-rail .theme-switch button.active {
   background: var(--rail-chip-hover);
   border-color: var(--rail-active-bar);
   color: var(--text);
@@ -721,7 +721,7 @@ html[data-theme='dark'] .version-v31 .logo-eagle-wrap {
   background: #2a3142;
 }
 
-html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .logo-eagle-wrap {
+html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .logo-eagle-wrap {
   background: var(--rail-chip);
 }
 
@@ -730,20 +730,20 @@ html[data-theme='dark'] .version-v31 .logo-rail:hover .logo-eagle-wrap {
   background: #343c50;
 }
 
-html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .sidebar.rail:hover .logo-eagle-wrap,
-html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .logo-rail:hover .logo-eagle-wrap {
+html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .sidebar.rail:hover .logo-eagle-wrap,
+html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .logo-rail:hover .logo-eagle-wrap {
   background: var(--rail-chip-hover);
 }
 
 html[data-theme='dark'] .version-v31 .sidebar.rail .nav-item.active,
-html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .sidebar.rail .nav-item.active {
+html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .sidebar.rail .nav-item.active {
   background: var(--rail-active-bg);
   color: var(--rail-active-text);
 }
 
 .version-v3 .sidebar.rail .nav-label,
 .version-v31 .sidebar.rail .nav-label,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .sidebar.rail .nav-label {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .sidebar.rail .nav-label {
   opacity: 0;
   transform: translateX(-6px);
   transition: opacity 0.2s ease, transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
@@ -755,8 +755,8 @@ html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v
 .version-v3 .sidebar.rail:focus-within .nav-label,
 .version-v31 .sidebar.rail:hover .nav-label,
 .version-v31 .sidebar.rail:focus-within .nav-label,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .sidebar.rail:hover .nav-label,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .sidebar.rail:focus-within .nav-label {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .sidebar.rail:hover .nav-label,
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .sidebar.rail:focus-within .nav-label {
   opacity: 1;
   transform: translateX(0);
   transition-delay: 0.05s;
@@ -773,7 +773,7 @@ html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v
 .version-v2 .main::before,
 .version-v3 .main::before,
 .version-v31 .main::before,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .main::before {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .main::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -789,7 +789,7 @@ html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v
 .version-v2 .main > *,
 .version-v3 .main > *,
 .version-v31 .main > *,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47) .main > * {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48) .main > * {
   position: relative;
   z-index: 1;
 }
@@ -3094,8 +3094,9 @@ html[data-theme='dark'] .campus-icon {
   }
 }
 
-/* --- v4.7 = 4.6 proportions + 4.2 style --- */
-.version-v47 {
+/* --- v4.7 = 4.6 proportions + 4.2 style; v4.8 = 4.7 with 4.4 cards --- */
+.version-v47,
+.version-v48 {
   --bg: #eaf4ff;
   --surface: #ffffff;
   --text: #0f1b33;
@@ -3129,7 +3130,8 @@ html[data-theme='dark'] .campus-icon {
   --rail-accent: #2f6bff;
 }
 
-html[data-theme='dark'] .version-v47 {
+html[data-theme='dark'] .version-v47,
+html[data-theme='dark'] .version-v48 {
   --bg: #07111f;
   --surface: #0f1c31;
   --text: #eef5ff;
@@ -3161,7 +3163,8 @@ html[data-theme='dark'] .version-v47 {
   --rail-panel-divider: #2a4a7a;
 }
 
-.home-v47 {
+.home-v47,
+.home-v48 {
   display: flex;
   flex-direction: column;
   gap: 16px;

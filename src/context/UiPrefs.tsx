@@ -21,6 +21,7 @@ export type UiVersion =
   | 'v44'
   | 'v46'
   | 'v47'
+  | 'v48'
 
 const VERSIONS: UiVersion[] = [
   'v1',
@@ -36,6 +37,7 @@ const VERSIONS: UiVersion[] = [
   'v44',
   'v46',
   'v47',
+  'v48',
 ]
 
 type UiPrefs = {
