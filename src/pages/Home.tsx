@@ -19,8 +19,14 @@ import {
   IconUsers,
 } from '../components/Icons'
 import { NewCourseModal } from '../components/NewCourseModal'
+import { HomeV50 } from './HomeV50'
 
 export function Home() {
+  const { version } = useUiPrefs()
+  return version === 'v50' ? <HomeV50 /> : <HomeLegacy />
+}
+
+function HomeLegacy() {
   const { version } = useUiPrefs()
   const isV41 = version === 'v41'
   const isV42 = version === 'v42'

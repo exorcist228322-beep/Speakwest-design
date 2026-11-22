@@ -15,9 +15,6 @@ import {
 } from '../components/Icons'
 import { Modal } from '../components/Modal'
 
-// Homework waiting for review; the banner shows only when there is some
-const HOMEWORK_TO_REVIEW = 0
-
 type Group = 'all' | 'invited' | 'not_invited'
 type View = 'list' | 'grid'
 type Sort = 'added' | 'name'
@@ -39,7 +36,13 @@ function statusTone(s: Student) {
   return 'blue'
 }
 
-export function StudentsEdvibe() {
+type Props = {
+  /** Homework waiting for review; the banner shows only when there is some */
+  toReview?: number
+  reviewHref?: string
+}
+
+export function StudentsEdvibe({ toReview = 0, reviewHref = '/review' }: Props) {
   const [list, setList] = useState<Student[]>(mockStudents)
   const [query, setQuery] = useState('')
   const [group, setGroup] = useState<Group>('all')
@@ -104,11 +107,11 @@ export function StudentsEdvibe() {
     <div className="ev-panel">
       <h1 className="ev-title">Ученики</h1>
 
-      {HOMEWORK_TO_REVIEW > 0 && (
+      {toReview > 0 && (
         <div className="ev-alert">
           <IconInfo />
           <span>Есть непроверенные домашние задания</span>
-          <Link to="/review" className="ev-alert-btn">
+          <Link to={reviewHref} className="ev-alert-btn">
             → Подробнее
           </Link>
         </div>

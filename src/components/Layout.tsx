@@ -42,6 +42,17 @@ const navV48 = [
   { to: '/settings', label: 'Настройки', icon: IconSettings },
 ]
 
+// 5.0: review lives inside Homework (tabs: to review / assigned / checked)
+const navV50 = [
+  { to: '/', label: 'Главная', icon: IconHome, end: true },
+  { to: '/classes', label: 'Классы', icon: IconClasses },
+  { to: '/students', label: 'Ученики', icon: IconGradCap },
+  { to: '/courses', label: 'Курсы', icon: IconBook },
+  { to: '/schedule', label: 'Расписание', icon: IconCalendar },
+  { to: '/homework', label: 'Домашки', icon: IconClipboard },
+  { to: '/settings', label: 'Настройки', icon: IconSettings },
+]
+
 export function Layout() {
   const location = useLocation()
   const navigate = useNavigate()
@@ -56,12 +67,14 @@ export function Layout() {
     version === 'v44' ||
     version === 'v46' ||
     version === 'v47' ||
-    version === 'v48'
+    version === 'v48' ||
+    version === 'v50'
   const isRail = version === 'v3' || version === 'v31' || isV32Family
   const isV31 = version === 'v31'
   const showEagle = isV31 || isV32Family
-  const isV48 = version === 'v48'
-  const nav = isV48 ? navV48 : isV32Family ? navV32 : navDefault
+  const isV50 = version === 'v50'
+  const isEdvibe = version === 'v48' || isV50
+  const nav = isV50 ? navV50 : isEdvibe ? navV48 : isV32Family ? navV32 : navDefault
   const [menuOpen, setMenuOpen] = useState(false)
   const [userOpen, setUserOpen] = useState(false)
   const userRef = useRef<HTMLDivElement>(null)
@@ -125,7 +138,7 @@ export function Layout() {
     </div>
   )
 
-  const dropdown = userOpen && (isV48 ? dropdownV48 : (
+  const dropdown = userOpen && (isEdvibe ? dropdownV48 : (
     <div className={`user-dropdown${isV32Family ? ' user-dropdown-rail' : ''}`} role="menu">
       <div className="user-dropdown-label">Тема</div>
       <div className="theme-switch">
@@ -302,6 +315,9 @@ export function Layout() {
         </button>
         <button type="button" className={version === 'v48' ? 'active' : ''} onClick={() => setVersion('v48')}>
           4.8
+        </button>
+        <button type="button" className={version === 'v50' ? 'active' : ''} onClick={() => setVersion('v50')}>
+          5.0
         </button>
       </div>
     </div>

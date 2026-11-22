@@ -22,6 +22,7 @@ export type UiVersion =
   | 'v46'
   | 'v47'
   | 'v48'
+  | 'v50'
 
 const VERSIONS: UiVersion[] = [
   'v1',
@@ -38,6 +39,7 @@ const VERSIONS: UiVersion[] = [
   'v46',
   'v47',
   'v48',
+  'v50',
 ]
 
 type UiPrefs = {
@@ -59,7 +61,7 @@ function readTheme(): Theme {
 
 function readVersion(): UiVersion {
   const v = localStorage.getItem(STORAGE_VERSION)
-  return VERSIONS.includes(v as UiVersion) ? (v as UiVersion) : 'v1'
+  return VERSIONS.includes(v as UiVersion) ? (v as UiVersion) : 'v50'
 }
 
 export function UiPrefsProvider({ children }: { children: ReactNode }) {

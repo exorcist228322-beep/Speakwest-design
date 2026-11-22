@@ -3,10 +3,17 @@ import { initial, students } from '../data/mock'
 import { IconDoor, IconLink, IconPlus } from '../components/Icons'
 import { useUiPrefs } from '../context/UiPrefs'
 import { StudentsEdvibe } from './StudentsEdvibe'
+import { useHomework } from '../data/store'
 
 export function Students() {
   const { version } = useUiPrefs()
+  if (version === 'v50') return <StudentsV50 />
   return version === 'v48' ? <StudentsEdvibe /> : <StudentsCards />
+}
+
+function StudentsV50() {
+  const toReview = useHomework().filter((h) => h.status === 'submitted').length
+  return <StudentsEdvibe toReview={toReview} reviewHref="/homework?tab=review" />
 }
 
 function StudentsCards() {
