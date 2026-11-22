@@ -255,15 +255,11 @@ export function Layout() {
           </div>
 
           {showEagle && (
-            <NavLink to="/" className="logo-rail" title="speakwest">
-              <span className="logo-eagle-wrap">
-                <img src="/logo-eagle.png?v=4" alt="" className="logo-eagle" />
+            <NavLink to="/" className="logo-rail" aria-label="SpeakWest, на главную">
+              <span className="logo-mark">
+                <img src="/brand/speakwest-logo-on-light.png" alt="" className="logo-full logo-on-light" />
+                <img src="/brand/speakwest-logo-on-dark.png" alt="" className="logo-full logo-on-dark" />
               </span>
-              <img
-                src="/logo-wordmark.png"
-                alt="speakwest"
-                className="logo-wordmark"
-              />
             </NavLink>
           )}
         </aside>

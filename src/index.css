@@ -543,55 +543,42 @@ html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v
   white-space: nowrap;
 }
 
-.version-v31 .logo-eagle-wrap,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48, .version-v50) .logo-eagle-wrap {
-  width: 40px;
+.version-v31 .logo-mark,
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48, .version-v50) .logo-mark {
+  /* collapsed: only the bird part of the official logo is visible */
+  width: 34px;
   height: 40px;
-  border-radius: 50%;
-  background: var(--rail-active-bg);
-  display: grid;
-  place-items: center;
   flex-shrink: 0;
   overflow: hidden;
-  transition: background 0.2s ease;
+  transition: width 0.28s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.version-v31 .logo-eagle,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48, .version-v50) .logo-eagle {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
-  display: block;
-}
-
-.version-v31 .logo-wordmark,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48, .version-v50) .logo-wordmark {
-  height: 20px;
+.version-v31 .logo-full,
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48, .version-v50) .logo-full {
+  height: 40px;
   width: auto;
-  opacity: 0;
-  transform: translateX(-8px);
-  transition: opacity 0.2s ease, transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
-  pointer-events: none;
-  flex-shrink: 0;
+  max-width: none;
 }
 
-.version-v31 .sidebar.rail:hover .logo-eagle-wrap,
-.version-v31 .sidebar.rail:focus-within .logo-eagle-wrap,
-.version-v31 .logo-rail:hover .logo-eagle-wrap,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48, .version-v50) .sidebar.rail:hover .logo-eagle-wrap,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48, .version-v50) .sidebar.rail:focus-within .logo-eagle-wrap,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48, .version-v50) .logo-rail:hover .logo-eagle-wrap {
-  background: var(--rail-chip-hover);
+.version-v31 .sidebar.rail:hover .logo-mark,
+.version-v31 .sidebar.rail:focus-within .logo-mark,
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48, .version-v50) .sidebar.rail:hover .logo-mark,
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48, .version-v50) .sidebar.rail:focus-within .logo-mark,
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48, .version-v50) .sidebar.rail.expanded .logo-mark {
+  width: 160px;
 }
 
-.version-v31 .sidebar.rail:hover .logo-wordmark,
-.version-v31 .sidebar.rail:focus-within .logo-wordmark,
-.version-v31 .logo-rail:hover .logo-wordmark,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48, .version-v50) .sidebar.rail:hover .logo-wordmark,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48, .version-v50) .sidebar.rail:focus-within .logo-wordmark,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48, .version-v50) .logo-rail:hover .logo-wordmark {
-  opacity: 1;
-  transform: translateX(0);
+/* light/dark logo files, same as platform-speakwest */
+.logo-on-dark {
+  display: none;
+}
+
+html[data-theme='dark'] .logo-on-light {
+  display: none;
+}
+
+html[data-theme='dark'] .logo-on-dark {
+  display: block;
 }
 
 :is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48, .version-v50) .sidebar.rail.expanded {
@@ -600,8 +587,7 @@ html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v
   box-shadow: 8px 0 28px rgba(26, 29, 38, 0.1);
 }
 
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48, .version-v50) .sidebar.rail.expanded .nav-label,
-:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48, .version-v50) .sidebar.rail.expanded .logo-wordmark {
+:is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48, .version-v50) .sidebar.rail.expanded .nav-label {
   opacity: 1;
   transform: translateX(0);
 }
@@ -715,24 +701,6 @@ html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v
 html[data-theme='dark'] .version-v31 .header {
   background: #1a1f2b;
   border-bottom-color: var(--border);
-}
-
-html[data-theme='dark'] .version-v31 .logo-eagle-wrap {
-  background: #2a3142;
-}
-
-html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48, .version-v50) .logo-eagle-wrap {
-  background: var(--rail-chip);
-}
-
-html[data-theme='dark'] .version-v31 .sidebar.rail:hover .logo-eagle-wrap,
-html[data-theme='dark'] .version-v31 .logo-rail:hover .logo-eagle-wrap {
-  background: #343c50;
-}
-
-html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48, .version-v50) .sidebar.rail:hover .logo-eagle-wrap,
-html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v41, .version-v42, .version-v43, .version-v44, .version-v46, .version-v47, .version-v48, .version-v50) .logo-rail:hover .logo-eagle-wrap {
-  background: var(--rail-chip-hover);
 }
 
 html[data-theme='dark'] .version-v31 .sidebar.rail .nav-item.active,
