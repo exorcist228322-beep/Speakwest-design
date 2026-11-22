@@ -13,6 +13,7 @@ import {
   IconSliders,
   IconUsers,
 } from '../components/Icons'
+import { Modal } from '../components/Modal'
 
 // Homework waiting for review; the banner shows only when there is some
 const HOMEWORK_TO_REVIEW = 0
@@ -303,10 +304,7 @@ function CreateStudentModal({
   }
 
   return (
-    <div className="modal-backdrop" onClick={onClose}>
-      <form className="modal" onClick={(e) => e.stopPropagation()} onSubmit={submit}>
-        <h2>Новый ученик</h2>
-        <p>Потом можно отправить ему ссылку для входа.</p>
+    <Modal title="Новый ученик" hint="Потом можно отправить ему ссылку для входа." onClose={onClose} onSubmit={submit}>
         <input
           autoFocus
           placeholder="Имя"
@@ -330,7 +328,6 @@ function CreateStudentModal({
             Создать
           </button>
         </div>
-      </form>
-    </div>
+    </Modal>
   )
 }

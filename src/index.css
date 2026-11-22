@@ -1480,11 +1480,37 @@ html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(26, 29, 38, 0.4);
+  background: rgba(15, 23, 42, 0.32);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
   display: grid;
   place-items: center;
-  z-index: 50;
+  z-index: 100;
   padding: 20px;
+  animation: modal-fade 0.16s ease-out;
+}
+
+.modal-backdrop .modal {
+  animation: modal-in 0.18s ease-out;
+}
+
+.modal-wide {
+  max-width: 560px;
+}
+
+@keyframes modal-fade {
+  from { opacity: 0; }
+}
+
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal-backdrop,
+  .modal-backdrop .modal {
+    animation: none;
+  }
 }
 
 .modal {
@@ -1508,13 +1534,18 @@ html[data-theme='dark'] :is(.version-v32, .version-v33, .version-v34, .version-v
 }
 
 .modal input,
-.modal textarea {
+.modal textarea,
+.modal select {
   width: 100%;
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 11px 14px;
   margin-bottom: 12px;
   outline: none;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 15px;
 }
 
 .modal input:focus,

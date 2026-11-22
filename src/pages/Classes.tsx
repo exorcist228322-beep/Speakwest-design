@@ -8,6 +8,7 @@ import {
   type ClassRoom,
 } from '../data/mock'
 import { IconPlus, IconSearch } from '../components/Icons'
+import { Modal } from '../components/Modal'
 
 type Group = 'all' | 'single' | 'group'
 
@@ -157,10 +158,7 @@ function CreateClassModal({
   }
 
   return (
-    <div className="modal-backdrop" onClick={onClose}>
-      <form className="modal" onClick={(e) => e.stopPropagation()} onSubmit={submit}>
-        <h2>Новый класс</h2>
-        <p>Класс — это один ученик или группа. Учеников добавите потом.</p>
+    <Modal title="Новый класс" hint="Класс — это один ученик или группа. Учеников добавите потом." onClose={onClose} onSubmit={submit}>
         <div className="ev-chips">
           <button
             type="button"
@@ -192,7 +190,6 @@ function CreateClassModal({
             Создать
           </button>
         </div>
-      </form>
-    </div>
+    </Modal>
   )
 }
