@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { TEACHER_NAME } from '../data/mock'
 import { useUiPrefs } from '../context/UiPrefs'
+import { VersionSwitcher } from './VersionSwitcher'
 import {
   IconBook,
   IconCalendar,
@@ -56,7 +57,7 @@ const navV50 = [
 export function Layout() {
   const location = useLocation()
   const navigate = useNavigate()
-  const { theme, version, setTheme, setVersion } = useUiPrefs()
+  const { theme, version, setTheme } = useUiPrefs()
   const isV32Family =
     version === 'v32' ||
     version === 'v33' ||
@@ -268,54 +269,7 @@ export function Layout() {
         </main>
       </div>
 
-      <div className="version-switcher" role="group" aria-label="Версия макета">
-        <span className="version-switcher-label">Макет</span>
-        <button type="button" className={version === 'v1' ? 'active' : ''} onClick={() => setVersion('v1')}>
-          v1
-        </button>
-        <button type="button" className={version === 'v2' ? 'active' : ''} onClick={() => setVersion('v2')}>
-          v2
-        </button>
-        <button type="button" className={version === 'v3' ? 'active' : ''} onClick={() => setVersion('v3')}>
-          v3
-        </button>
-        <button type="button" className={version === 'v31' ? 'active' : ''} onClick={() => setVersion('v31')}>
-          3.1
-        </button>
-        <button type="button" className={version === 'v32' ? 'active' : ''} onClick={() => setVersion('v32')}>
-          3.2
-        </button>
-        <button type="button" className={version === 'v33' ? 'active' : ''} onClick={() => setVersion('v33')}>
-          3.3
-        </button>
-        <button type="button" className={version === 'v34' ? 'active' : ''} onClick={() => setVersion('v34')}>
-          3.4
-        </button>
-        <button type="button" className={version === 'v41' ? 'active' : ''} onClick={() => setVersion('v41')}>
-          4.1
-        </button>
-        <button type="button" className={version === 'v42' ? 'active' : ''} onClick={() => setVersion('v42')}>
-          4.2
-        </button>
-        <button type="button" className={version === 'v43' ? 'active' : ''} onClick={() => setVersion('v43')}>
-          4.3
-        </button>
-        <button type="button" className={version === 'v44' ? 'active' : ''} onClick={() => setVersion('v44')}>
-          4.4
-        </button>
-        <button type="button" className={version === 'v46' ? 'active' : ''} onClick={() => setVersion('v46')}>
-          4.6
-        </button>
-        <button type="button" className={version === 'v47' ? 'active' : ''} onClick={() => setVersion('v47')}>
-          4.7
-        </button>
-        <button type="button" className={version === 'v48' ? 'active' : ''} onClick={() => setVersion('v48')}>
-          4.8
-        </button>
-        <button type="button" className={version === 'v50' ? 'active' : ''} onClick={() => setVersion('v50')}>
-          5.0
-        </button>
-      </div>
+      <VersionSwitcher />
     </div>
   )
 }

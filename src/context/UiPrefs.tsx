@@ -5,42 +5,10 @@ import {
   useState,
   type ReactNode,
 } from 'react'
+import { VERSIONS, type UiVersion } from './versions'
 
 export type Theme = 'light' | 'dark'
-export type UiVersion =
-  | 'v1'
-  | 'v2'
-  | 'v3'
-  | 'v31'
-  | 'v32'
-  | 'v33'
-  | 'v34'
-  | 'v41'
-  | 'v42'
-  | 'v43'
-  | 'v44'
-  | 'v46'
-  | 'v47'
-  | 'v48'
-  | 'v50'
-
-const VERSIONS: UiVersion[] = [
-  'v1',
-  'v2',
-  'v3',
-  'v31',
-  'v32',
-  'v33',
-  'v34',
-  'v41',
-  'v42',
-  'v43',
-  'v44',
-  'v46',
-  'v47',
-  'v48',
-  'v50',
-]
+export type { UiVersion }
 
 type UiPrefs = {
   theme: Theme
