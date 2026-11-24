@@ -29,7 +29,7 @@ function readTheme(): Theme {
 
 function readVersion(): UiVersion {
   const v = localStorage.getItem(STORAGE_VERSION)
-  return VERSIONS.includes(v as UiVersion) ? (v as UiVersion) : 'v50'
+  return VERSIONS.includes(v as UiVersion) ? (v as UiVersion) : 'v51'
 }
 
 export function UiPrefsProvider({ children }: { children: ReactNode }) {

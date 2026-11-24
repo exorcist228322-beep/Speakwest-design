@@ -1,6 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { Layout } from './components/Layout'
-import { UiPrefsProvider } from './context/UiPrefs'
+import { UiPrefsProvider, useUiPrefs } from './context/UiPrefs'
 import { Achievements } from './pages/Achievements'
 import { Classes } from './pages/Classes'
 import { CourseDetail } from './pages/CourseDetail'
@@ -12,11 +12,24 @@ import { Review } from './pages/Review'
 import { Schedule } from './pages/Schedule'
 import { Settings } from './pages/Settings'
 import { Students } from './pages/Students'
+import { App51 } from './v51/App51'
 
 export default function App() {
   return (
     <UiPrefsProvider>
       <BrowserRouter>
+        <VersionRoutes />
+      </BrowserRouter>
+    </UiPrefsProvider>
+  )
+}
+
+function VersionRoutes() {
+  const { version } = useUiPrefs()
+
+  if (version === 'v51') return <App51 />
+
+  return (
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<Home />} />
@@ -33,7 +46,5 @@ export default function App() {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>
-      </BrowserRouter>
-    </UiPrefsProvider>
   )
 }

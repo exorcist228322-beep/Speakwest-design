@@ -14,6 +14,7 @@ export type UiVersion =
   | 'v47'
   | 'v48'
   | 'v50'
+  | 'v51'
 
 /** Layout versions in switcher order; the last one opens by default. */
 export const VERSIONS: UiVersion[] = [
@@ -32,4 +33,5 @@ export const VERSIONS: UiVersion[] = [
   'v47',
   'v48',
   'v50',
+  'v51',
 ]
